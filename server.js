@@ -80,9 +80,9 @@ const RISK_TEXTS = {
     rec:  'Manejar con sueño tiene efectos similares a hacerlo con alcohol. Si sientes somnolencia, detente, descansa 20 minutos o cede el volante a otra persona.',
   },
   distancia: {
-    risk: 'Distancia de seguimiento insuficiente con el vehículo de adelante',
-    rec:  'Mantén al menos 2 segundos de distancia con el vehículo de adelante en condiciones normales, y el doble en lluvia o de noche. Esto te da tiempo de reacción real.',
-  },
+  risk: 'Distancia de seguimiento insuficiente con el vehículo de adelante',
+  rec:  'Mantén al menos 3 segundos de distancia con el vehículo de adelante en condiciones normales y agrega, como mínimo, un segundo extra por cada condición adversa (lluvia, clima, tráfico, etc.). Esto te permitirá tener un tiempo de reacción efectivo.',
+},
   percepcion: {
     risk: 'Sobreestimación de la capacidad de control sobre el entorno vial',
     rec:  'Ningún conductor puede controlar lo que hacen los demás. Maneja siempre con la guardia puesta, anticipando posibles errores ajenos.',
