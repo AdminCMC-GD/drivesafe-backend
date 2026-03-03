@@ -54,7 +54,8 @@ function requireAuth(req, res, next) {
     return res.status(401).json({ error: 'No autorizado' });
   }
   try {
-    const payload = jwt.verify(auth.slice(7), process.env.JWT_SECRET);
+    const secret = process.env.JWT_SECRET || 'fallback-secret';
+    const payload = jwt.verify(auth.slice(7), secret);
     req.admin = payload;
     next();
   } catch {
@@ -225,10 +226,11 @@ app.post('/api/analyze', async (req, res) => {
 // ─── Ruta de Login Admin ────────────────────────────────────────────────────
 app.post('/api/admin/login', (req, res) => {
   const { password } = req.body;
+  const secret = process.env.JWT_SECRET || 'fallback-secret';
   if (!password || password !== process.env.ADMIN_PASSWORD) {
     return res.status(401).json({ error: 'Contraseña incorrecta' });
   }
-  const token = jwt.sign({ role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '8h' });
+  const token = jwt.sign({ role: 'admin' }, secret, { expiresIn: '8h' });
   return res.json({ token });
 });
 
