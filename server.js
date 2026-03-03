@@ -5,6 +5,8 @@ import pkg from 'pg';
 import jwt from 'jsonwebtoken';
 
 dotenv.config();
+console.log('JWT_SECRET presente:', !!process.env.JWT_SECRET);
+console.log('ADMIN_PASSWORD presente:', !!process.env.ADMIN_PASSWORD);
 
 const { Pool } = pkg;
 const app  = express();
